@@ -1,0 +1,24 @@
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+
+using namespace System;
+using namespace std;
+
+int suma(int a, int b);
+int main(array<System::String ^> ^args)
+{
+	int x = 10, y = 20;
+
+	cout << suma(x, y);
+
+    getch();
+    return 0;
+}
+
+int suma(int a, int b)
+{
+	int sum = a + b;
+
+	return sum;
+}

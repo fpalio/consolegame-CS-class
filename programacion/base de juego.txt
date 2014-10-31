@@ -1,0 +1,106 @@
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+
+//funciones de movimiento *cabezeras*
+#include <windows.h> 
+
+
+using namespace System;
+using namespace std;
+
+//nivel 1
+char map[8][8] = {
+	{'*', '*', '*', '*', '*', '*', '*', '*'},
+	{'*', '@', ' ', ' ', ' ', ' ', ' ', '*'},
+	{'*', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
+	{'*', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
+	{'*', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
+	{'*', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
+	{'*', ' ', ' ', ' ', ' ', ' ', ' ', '*'},
+	{'*', '*', '*', '*', '*', '*', '*', '*'}
+};
+
+int x =1;
+int y =1;
+
+bool game_running = true;
+
+int main(array<System::String ^> ^args)
+{
+
+	while (game_running == true)
+	{
+		//********************Dibujo de nivel**********************************************************
+		system("cls");
+		for (int fil = 0; fil < 8; fil++)
+		{
+
+			for (int col = 0; col < 8; col++)
+			{
+				if (map[fil][col] =='*')
+				{
+					Console::BackgroundColor = ConsoleColor::White;
+					Console::SetCursorPosition(col,fil);
+				cout << map[fil][col];
+				
+				}
+				else if (map[fil][col] =='@')
+				{
+					Console::ForegroundColor = ConsoleColor::Blue;
+					Console::SetCursorPosition(col,fil);
+				cout << map[fil][col];
+				Console::ForegroundColor = ConsoleColor::Gray;
+				}
+				else
+				{
+					Console::BackgroundColor = ConsoleColor::Black;
+					Console::SetCursorPosition(col,fil);
+				cout << map[fil][col];
+				
+				}
+			}
+		}
+		system("pause>nul");
+		Console::BackgroundColor = ConsoleColor::Black;
+		
+
+	// *********************** Movimiento de Juego **********************************************************************************
+		if(GetAsyncKeyState(VK_DOWN)){
+            int y2 = y+1;
+            if(map[y2][x] == ' '){
+                map[y][x] = ' ';
+                y++;
+                map[y][x] = '@';
+            }
+        }/*
+		if(GetAsyncKeyState(VK_UP)){
+            int y2 = y-1;
+            if(map[y2][x] == ' '){
+                map[y][x] = ' ';
+                y--;
+                map[y][x] = '@';
+            }
+        }
+		if(GetAsyncKeyState(VK_RIGHT)){
+            int x2 = x+1;
+            if(map[y][x2] == ' '){
+                map[y][x] = ' ';
+                x++;
+                map[y][x] = '@';
+            }
+        }
+		if(GetAsyncKeyState(VK_LEFT)){
+            int x2 = x-1;
+            if(map[y][x2] == ' '){
+                map[y][x] = ' ';
+                x--;
+                map[y][x] = '@';
+            }
+        }
+		*/
+	}
+
+	getch();
+	return 0;
+}

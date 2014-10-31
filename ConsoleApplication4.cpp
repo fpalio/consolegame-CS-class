@@ -187,25 +187,13 @@ void movimientoPersonaje (int map[][40])
 
 	}
 }
+
+
 //*******************************************************
 int main(array<System::String ^> ^args)
 {
-	//home screen************************************
-	Console::BackgroundColor = ConsoleColor::Black;
-	Console::SetCursorPosition(3,1);
-	cout<<"Nivel:"<<nivelGM;
-	Console::SetCursorPosition(25,3);
-	cout<<"* = paredes";
-	Console::SetCursorPosition(25,4);
-	cout<<"@ = jugador";
-	Console::SetCursorPosition(25,5);
-	cout<<"O= cajas/ X= meta";
-	Console::SetCursorPosition(25,6);
-	cout<<"Objetivo: es poner las O en las X"<<endl;
-	Console::SetCursorPosition(25,7);
-	cout<<"Nivel:"<<nivelGM;
-	Console::SetCursorPosition(25,7);
-	cout<<"Presione ESC para terminar de jugar";
+	
+	cout<<"Silver Sphere";
 
 	getch();
 	system("cls");
@@ -215,14 +203,15 @@ int main(array<System::String ^> ^args)
 		switch (nivelGM)
 		{
 		case 1:
-			dibujar (map);
 			movimientoPersonaje(map);
+			dibujar (map);
+			
 			break;
 
 
 		}
 	}
-
+	
 	getch();
 	return 0;
 }

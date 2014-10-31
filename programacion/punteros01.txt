@@ -1,0 +1,23 @@
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+
+using namespace System;
+using namespace std;
+
+int main(array<System::String ^> ^args)
+{
+	int x = 20, *p, **pp;
+
+	p = &x;
+	pp = &p;
+
+	cout << "\ndireccion de x: " << &x;
+	cout << "\ncontenido de p: " << p;
+	cout << "\ndireccion de p: " << &p;
+	cout << "\nindireccion de p: " << *p;
+	cout << "\nindireccion de indireccion de pp: " << **pp;
+
+    getch();
+    return 0;
+}

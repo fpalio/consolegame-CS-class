@@ -1,0 +1,35 @@
+#include "stdafx.h"
+#include <iostream>
+#include <conio.h>
+
+using namespace System;
+using namespace std;
+
+int main(array<System::String ^> ^args)
+{
+	char cTecla = 0;
+
+	cout << "\r\nPresione un Tecla ...";
+
+	while( cTecla != char(27) ) //  != ESC
+	{
+		cTecla = _getch(); // sin eco
+
+		if( cTecla == 0 ) cTecla = getch(); // Las compuestas
+
+		if( cTecla == char(75) )
+			cout << "\r\n Presiono IZQUIERDA";
+
+		if( cTecla == char(77) )
+			cout << "\r\n Presiono DERECHA";
+
+		if( cTecla == char(72) )
+			cout << "\r\n Presiono Flecha ARRIBA";
+
+		if( cTecla == char(80) )
+			cout << "\r\n Presiono Flecha ABAJO";
+	}
+
+	_getch();
+    return 0;
+}
